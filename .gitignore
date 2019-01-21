@@ -3,3 +3,5 @@ db.sqlite3
 blog/migrations
 lehehe/settings.py
 lehehe/__pycache__/
+blog/__pycache__/
+.DS_Store
