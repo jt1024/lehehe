@@ -1,7 +1,7 @@
-from django.conf.urls import url
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.blog_list, name='blog_list'),
-    url(r'(?P<article_id>\d)/$', views.blog_detail, name='blog_detail'),
+    path(r'', views.blog_list, name='blog_list'),
+    path(r'<int:article_id>/', views.blog_detail, name='blog_detail'),
 ]
