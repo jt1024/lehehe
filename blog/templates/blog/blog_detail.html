@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %} blog titles {% endblock %}
+
+{% block content %}
+<div class="row text-center vertical-middlw-sm">
+    <h1>{{article.title}}</h1>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-md-8">
+        <p class="text-center">
+            <span>{{article.author.username}}</span>
+            <span style="margin-left:20px">{{publish}}</span>
+        </p>
+        <div>
+            {{article.body}}
+        </div>
+    </div>
+    <div class="col-xs-6 col-md-4">
+        <h2>广告</h2>
+        <p>跟涛哥学：www.taoge100.com/</p>
+        <img width="200px"
+             src="https://upload.jianshu.io/users/upload_avatars/2255795/899a3c03-80e5-4b18-9d64-cfda1f6de13b.png?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240">
+    </div>
+</div>
+{% endblock %}

@@ -5,9 +5,10 @@ from django.contrib.auth.models import User
 
 class BlogArticles(models.Model):
     title = models.CharField(max_length=300)
-    # BlogArticles表中的author， 是User表的外键
-    # 通过author字段规定了用户与文章的关系，一个用户对应多篇文章，即用户对文章是"一对多"
-    # related_name="blog_posts"的作用是，允许通过类User反向查询到BlogArticles
+    # ForeignKey(外键)对应多对一，外键要定义在“多”的一方
+    # 本例通过author字段规定了文章与用户的关系，多篇文章可以对应一个用户，即文章对用户是"多对一"
+    # related_name="blog_posts"的作用是，允许通过类User反向查询到BlogArticles，这个参数我们可以不设置，Django会默认以模型的小写作为反向关联名
+    # 以后从User对象反向关联到他所写的BlogArticles，就可以使用user.blog_posts了
     author = models.ForeignKey(User, related_name="blog_posts", on_delete=models.CASCADE)
     body = models.TextField()
     publish = models.DateTimeField(default=timezone.now)
