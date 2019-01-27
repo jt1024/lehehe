@@ -1,6 +1,7 @@
 .idea
 db.sqlite3
 blog/migrations
+account/migrations
 lehehe/__pycache__/
 blog/__pycache__/
 account/__pycache__/
