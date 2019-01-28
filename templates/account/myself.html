@@ -57,7 +57,12 @@
         <div class="col-md-6">
             {% load staticfiles %}
             <div style="margin-right:100px">
-                <img name="user_face" src="{% static 'images/avatar.png' %}" class="img-circle" width="270px" id="my_photo">
+                <!--img name="user_face" src="{% static 'images/newton.jpg' %}" class="img-circle" width="270px" id="my_photo"-->
+                {% if userinfo.photo %}
+                <img src="{{ userinfo.photo | striptags }}" class="img-circle" id="my_photo" name="user_face">
+                {% else %}
+                <img name="user_face" src="{% static 'images/avatar.png' %}" class="img-circle" id="my_photo">
+                {% endif %}
             </div>
             <div style="margin-right:100px">
                 <button class="btn btn-primary btn-lg" id="upload_image" onclick="upload_image_layer()">upload my photo</button>

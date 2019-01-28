@@ -45,7 +45,15 @@
             this.files = [];
         })
         $('#btnCrop').on('click', function(){
-            alert("图片上传喽");
+            //alert("图片上传喽");
+            $.ajax({
+                url: '{% url "account:my_image" %}',
+                type: 'POST',
+                data: {"img": img},
+                success: function(e){
+                    location.href= "{% url 'account:my_information' %}"
+                },
+            })
         })
 
         function getImg(){
@@ -60,6 +68,8 @@
         $('#btnZoomIn').on('click', function(){ cropper.zoomIn();})
         $('#btnZoomOut').on('click', function(){cropper.zoomOut(); })
     });
+
+
 
 
 </script>

@@ -35,7 +35,7 @@ class UserProfileForm(forms.ModelForm):
 class UserInfoForm(forms.ModelForm):
     class Meta:
         model = UserInfo
-        fields = ("school", "company", "profession", "address", "aboutme")
+        fields = ("school", "company", "profession", "address", "aboutme", "photo")
 
 
 # 注意：UserForm 的 fields 中不包括 username ，因为 username 一旦确定就不能随便修改，在用户详细信息中不允许修改这个字段。
