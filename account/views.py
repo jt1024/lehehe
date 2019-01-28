@@ -84,3 +84,7 @@ def myself_edit(request):
         userprofile_form = UserProfileForm(initial={"birth": userprofile.birth, "phone": userprofile.phone})
         userinfo_form = UserInfoForm(initial={"school": userinfo.school, "company": userinfo.company, "profession": userinfo.profession, "address": userinfo.address, "aboutme": userinfo.aboutme})
         return render(request, "account/myself_edit.html", {"user_form": user_form, "userprofile_form": userprofile_form, "userinfo_form": userinfo_form})
+
+
+def my_image(request):
+    return render(request, 'account/imagecrop.html')
