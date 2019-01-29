@@ -120,7 +120,7 @@ STATICFILES_DIRS = (  # 自定义静态文件位置
 
 # Django内置的登录方法 login（）函数里有一个参数redirect_field_name=LOGIN_REDIRECT_URL
 # 这就是登录后的重定向设置，下面这行代码就是我们对这个参数的配置
-LOGIN_REDIRECT_URL = '/blog/'
+LOGIN_REDIRECT_URL = '/home/'
 
 # 邮箱配置
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, reverse
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login
 from .forms import LoginForm, RegistrationForm, UserProfileForm, UserInfoForm, UserForm
@@ -38,7 +38,8 @@ def user_register(request):
             new_profile.user = new_user
             new_profile.save()
             UserInfo.objects.create(user=new_user)  # 新增，增加myself方法后，才添加这行代码
-            return HttpResponse("注册成功！")
+            # return HttpResponse("注册成功！")
+            return HttpResponseRedirect(reverse("account:user_login"))
         else:
             return HttpResponse("抱歉，你不能注册")
     else:
