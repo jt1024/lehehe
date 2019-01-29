@@ -125,8 +125,8 @@ LOGIN_REDIRECT_URL = '/home/'
 # 邮箱配置
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.163.com'
-EMAIL_HOST_USER = '524sjl@163.com'
-EMAIL_HOST_PASSWORD = 'cr163yizhong'
+EMAIL_HOST_USER = '邮箱名称@163.com'
+EMAIL_HOST_PASSWORD = '邮箱密码'
 EMAIL_PORT = '25'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = '524sjl@163.com'
