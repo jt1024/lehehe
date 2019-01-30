@@ -36,7 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'account',  # 新增
+    'account',
+    'article',  # 新增
 ]
 
 MIDDLEWARE = [
