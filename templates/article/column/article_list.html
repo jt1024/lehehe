@@ -1,0 +1,23 @@
+{% extends "article/base.html" %}
+{% load staticfiles %}
+{% block title %}articles list{% endblock %}
+{% block content %}
+<div>
+    <table class="table table-hover">
+        <tr>
+            <td>序号</td>
+            <td>标题</td>
+            <td>栏目</td>
+            <td>操作</td>
+        </tr>
+        {% for article in articles %}
+        <tr id={{ article.id }}>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ article.title }}</td>
+            <td>{{ article.column }}</td>
+            <td>--</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
-from .models import ArticleColumn
+from .models import ArticleColumn, ArticlePost
 from .forms import ArticleColumnForm, ArticlePostForm
 
 
@@ -74,3 +74,9 @@ def article_post(request):
         article_post_form = ArticlePostForm()
         article_columns = request.user.article_column.all()
         return render(request, "article/column/article_post.html", {"article_post_form": article_post_form, "article_columns": article_columns})
+
+
+@login_required(login_url='/account/login')
+def article_list(request):
+    articles = ArticlePost.objects.filter(author=request.user)
+    return render(request, "article/column/article_list.html", {"articles": articles})
