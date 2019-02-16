@@ -1,5 +1,5 @@
 from django.urls import path, re_path
-from . import views
+from . import views, list_views
 
 app_name = 'article'  # 一定要写这一行，否则html中会报错 'article' is not a registered namespace
 
@@ -12,4 +12,5 @@ urlpatterns = [
     re_path('article-detail/(?P<id>\d+)/(?P<slug>[-\w]+)/$', views.article_detail, name="article_detail"),
     path('del-article/', views.del_article, name="del_article"),
     path('redit-article/<int:article_id>/', views.redit_article, name="redit_article"),
+    path('list-article-titles/', list_views.article_titles, name="article_titles"),
 ]
