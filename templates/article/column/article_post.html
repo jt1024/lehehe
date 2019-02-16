@@ -48,7 +48,8 @@ function publish_article(){
         data: {"title":title, "body":body, "column_id":column_id, "tags":JSON.stringify(article_tags)},
         success: function(e){
             if(e=="1"){
-                layer.msg("successful");
+                //layer.msg("successful");
+                location.href = "{% url 'article:article_list' %}";//修改后：文章发布成功后跳转到文章列表
             }else if(e=="2"){
                 layer.msg("sorry.") ;
             }else{
