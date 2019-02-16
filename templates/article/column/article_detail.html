@@ -1,0 +1,15 @@
+{% extends "article/base.html" %}
+{% load staticfiles %}
+{% block title %}articles list{% endblock %}
+{% block content %}
+<div>
+    <header>
+        <h1>{{ article.title }}</h1>
+        <p>{{ user.username }}</p>
+    </header>
+
+    <div id='editormd-view'>
+        {{ article.body }}
+    </div>
+</div>
+{% endblock %}

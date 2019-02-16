@@ -13,7 +13,7 @@
         {% for article in articles %}
         <tr id={{ article.id }}>
             <td>{{ forloop.counter }}</td>
-            <td>{{ article.title }}</td>
+            <td><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></td>
             <td>{{ article.column }}</td>
             <td>--</td>
         </tr>

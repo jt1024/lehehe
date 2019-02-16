@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
@@ -80,3 +80,11 @@ def article_post(request):
 def article_list(request):
     articles = ArticlePost.objects.filter(author=request.user)
     return render(request, "article/column/article_list.html", {"articles": articles})
+
+
+@login_required(login_url='/account/login')
+def article_detail(request, id, slug):
+    article = get_object_or_404(ArticlePost, id=id, slug=slug)
+    return render(request, "article/column/article_detail.html", {"article": article})
+
+
