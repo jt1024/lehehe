@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'account',
-    'article',  # 新增
+    'article',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +131,8 @@ EMAIL_HOST_PASSWORD = '邮箱密码'
 EMAIL_PORT = '25'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = '524sjl@163.com'
+
+# Redis配置
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 0
