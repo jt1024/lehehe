@@ -40,6 +40,17 @@
             {% endfor %}
         </div>
     </div>
+    <div class="col-md-3">
+        <p class="text-center">
+        <h3>最受欢迎文章</h3></p>
+        <ol>
+            {% for article_rank in most_viewed %}
+            <li>
+                <a href="{{article_rank.get_url_path}}">{{ article_rank.title }}</a>
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
 </div>
 
 <script src='{% static "js/jquery.js" %}'></script>
@@ -80,6 +91,7 @@ function like_article(id, action){
         },
     });
 }
+
 
 
 </script>
