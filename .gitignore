@@ -7,4 +7,5 @@ lehehe/__pycache__/
 blog/__pycache__/
 account/__pycache__/
 article/__pycache__/
+article/templatetags/__pycache__/
 .DS_Store
