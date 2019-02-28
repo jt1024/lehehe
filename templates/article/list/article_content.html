@@ -14,6 +14,7 @@
                 <span style="margin-left:20px" class="glyphicon glyphicon-thumbs-up">{{ total_likes }}like{{ total_likes|pluralize }}</span>
                 <span style="margin-left:20px">{{ total_views }} view{{ total_views|pluralize}}</span>
             </p>
+            <p><span style="margin-right: 10px"><strong>Tags:</strong></span> {{ article.article_tag.all | join:", "}}</p>
         </header>
 
         <link rel="stylesheet" href="{% static 'editor/css/editormd.preview.css' %}"/>
