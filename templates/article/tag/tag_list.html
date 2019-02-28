@@ -1,6 +1,9 @@
 {% extends "article/base.html" %}
+
 {% load staticfiles %}
+
 {% block title %}articles tag{% endblock %}
+
 {% block content %}
 <div>
     <p>添加文章标签</p>
@@ -26,10 +29,14 @@
         <tr id={{ forloop.counter }}>
             <td>{{ forloop.counter }}</td>
             <td>{{ article_tag.tag }}</a></td>
-            <td>--</td>
+            <td>
+                <a nane="delete" href="javascript:" onclick="del_tag(this, {{ article_tag.id }})">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </a>
+            </td>
         </tr>
         {% empty %}
-        <p>现在还没有标签，请添加</p>
+        <p>You have no article tags. Please add them.</p>
         {% endfor %}
     </table>
 </div>
@@ -39,20 +46,47 @@
 <script type="text/javascript">
 
 function add_tag(){
-    tag = $("#id_tag").val(); 
+    tag = $("#id_tag").val();
     $.ajax({
         url: '{% url "article:article_tag" %}',
-        type: "POST", 
-        data: {"tag":tag}, 
+        type: "POST",
+        data: {"tag":tag},
         success: function(e){
             if(e=="1"){
-                layer.msg("You have added a new tag."); 
+                layer.msg("You have added a new tag.");
                 window.location.reload();
-            } else { 
+            } else {
                 layer.msg(e)
-            } 
+            }
         }
-    }); 
+    });
+}
+
+function del_tag(the, tag_id){
+    var article_tag = $(the).parents("tr").children("td").eq(1).text();
+    layer.open({
+        type: 1,
+        skin: "layui-layer-rim",
+        area: ["400px", "200px"],
+        title: "删除文章标签",
+        content: '<div class="text-center" style="margin-top:20px"><p>是否确定删除文章标签《'+article_tag+'》</p> </div>',
+        btn:['确定', '取消'],
+        yes: function(){
+            $.ajax({
+                url: '{% url "article:del_article_tag" %}',
+                type:"POST",
+                data: {"tag_id":tag_id},
+                success: function(e){
+                    if(e=="1"){
+                        parent.location.reload();
+                        layer.msg("The tag has been deleted.");
+                    }else{
+                        layer.msg("删除失败");
+                    }
+                },
+            })
+        },
+    });
 }
 
 </script>

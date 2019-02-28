@@ -155,3 +155,16 @@ def article_tag(request):
                 return HttpResponse("the data cannot be save.")
         else:
             return HttpResponse("sorry, the form is not valid.")
+
+
+@login_required(login_url='/account/login')
+@require_POST
+@csrf_exempt
+def del_article_tag(request):
+    tag_id = request.POST['tag_id']
+    try:
+        tag = ArticleTag.objects.get(id=tag_id)
+        tag.delete()
+        return HttpResponse("1")
+    except:
+        return HttpResponse("2")
