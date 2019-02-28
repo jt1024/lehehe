@@ -102,6 +102,19 @@
             </li>
             {% endfor %}
         </ul>
+
+        <hr>
+        <p class="text-center">
+        <h3>推荐相似文章</h3></p>
+        <ul>
+            {% for similar in similar_articles %}
+            <li>
+                <p><a href="{{ similar.get_url_path }}">{{ similar.title }}</a></p>
+            </li>
+            {% empty %}
+            <p>Sorry, 没有相似文章</p>
+            {% endfor %}
+        </ul>
     </div>
 </div>
 
@@ -143,6 +156,8 @@ function like_article(id, action){
         },
     });
 }
+
+
 
 </script>
 {% endwith %}
