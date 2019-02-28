@@ -21,4 +21,9 @@
 - [十四、Django2.1 搭建多用户的博客网站——向用户展示文章](https://www.jianshu.com/p/1e5ef66a6328)
 - [十五、Django2.1 搭建多用户的博客网站——文章模块小结](https://www.jianshu.com/p/f31050c910d9)
 #### 华丽转身——多用户的博客网站之扩展功能
+- [十六、Django2.1 搭建多用户的博客网站——文章点赞功能](https://www.jianshu.com/p/002c9792483a)
+- [十七、Django2.1 搭建多用户的博客网站——统计文章浏览次数](https://www.jianshu.com/p/e2b1c7de8a99)
+- [十八、Django2.1 搭建多用户的博客网站——文章评论功能](https://www.jianshu.com/p/432435f6fb58)
+- [十九、Django2.1 搭建多用户的博客网站——使用自定义模板标签](https://www.jianshu.com/p/4a4a14a2b994)
+- [二十、Django2.1 搭建多用户的博客网站——文章标签](https://www.jianshu.com/p/d05b35dbd70a)
 - [未完待续]()
