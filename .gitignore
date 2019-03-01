@@ -1,11 +1,13 @@
 .idea
 db.sqlite3
 blog/migrations
-account/migrations
-article/migrations
-lehehe/__pycache__/
 blog/__pycache__/
+account/migrations
 account/__pycache__/
+article/migrations
 article/__pycache__/
 article/templatetags/__pycache__/
+image/migrations
+image/__pycache__/
+lehehe/__pycache__/
 .DS_Store
