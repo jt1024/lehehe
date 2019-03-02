@@ -22,5 +22,6 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('account/', include('account.urls')),
     path('article/', include('article.urls')),
+    path('image/', include('image.urls')),
     path('home/', TemplateView.as_view(template_name="home.html"), name='home'), # 新增
 ]
