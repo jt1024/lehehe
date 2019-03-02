@@ -7,4 +7,5 @@ app_name = 'image'  # 一定要写这一行，否则html中会报错 'image' is 
 urlpatterns = [
     path('list-images/', views.list_images, name="list_images"),
     path('upload-image/', views.upload_image, name='upload_image'),
+    path('del-image/', views.del_image, name='del_image'),
 ]
