@@ -16,7 +16,8 @@
             <tr>
                 <td>{{ forloop.counter }}</td>
                 <td>{{ image.title }}</td>
-                <td>{{ image.image }}</td>
+                <!--<td>{{ image.image }}</td>-->
+                <td><img src="{{ image.image.url }}" width="100px" height="100px"></td>
                 <td><a nane="delete" href="javascript:" onclick="del_image(this, {{ image.id }})"><span class="glyphicon glyphicon-trash" style="margin-left:20px;"></span></a></td>
             </tr>
             {% empty %}
@@ -91,6 +92,7 @@ function del_image(the, image_id){
         },
     });
 }
+
 
 </script>
 {% endblock %}
