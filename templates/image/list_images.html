@@ -1,4 +1,5 @@
 {% extends "article/base.html" %}
+{% load thumbnail %}
 {% load staticfiles %}
 {% block title %}images{% endblock %}
 {% block content %}
@@ -17,7 +18,9 @@
                 <td>{{ forloop.counter }}</td>
                 <td>{{ image.title }}</td>
                 <!--<td>{{ image.image }}</td>-->
-                <td><img src="{{ image.image.url }}" width="100px" height="100px"></td>
+                {% thumbnail image.image "100x100" crop="center" as im %}
+                <td><img src="{{im.url}}" width="{{ im.width }}" height="{{ im.height }}"></img></td>
+                {% endthumbnail %}
                 <td><a nane="delete" href="javascript:" onclick="del_image(this, {{ image.id }})"><span class="glyphicon glyphicon-trash" style="margin-left:20px;"></span></a></td>
             </tr>
             {% empty %}
@@ -92,6 +95,7 @@ function del_image(the, image_id){
         },
     });
 }
+
 
 
 </script>

@@ -10,4 +10,5 @@ article/templatetags/__pycache__/
 image/migrations
 image/__pycache__/
 lehehe/__pycache__/
+media/cache
 .DS_Store
